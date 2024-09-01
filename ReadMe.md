@@ -1,0 +1,3 @@
+<h1> My Daily DSA and OOP practice code Repository</h1>
+
+<p>Hi!! This is my daily DSA and OOP code practice repository wherein I will try and code everyday and and some stuff to get familiar with Github along with actually studyign for my college exams which I rarely do so hopefully adding commits on Github and mainting a streak will act as a motivator for me to actually sit and practice my DSA and OOP college studies code. Also practicing with DSA will help me eventually get into LeetCode coding and competitive programming and the OOP coding will help me strenthen my JAVA and Python coding knowledge. Looking forward to it and I hope I stick to this routine of adding meaning codes here daily!!</p>
