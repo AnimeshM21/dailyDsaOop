@@ -8,7 +8,7 @@ interface A {
     void doSomething();
 }
 
-class B implements A.NestedIf, A {
+class B implements A.NestedIf {
     // Implementing the NestedIf interface method
     public boolean isNotNegative(int x) {
         return x >= 0; // Return true if x is non-negative
