@@ -1,20 +1,33 @@
 #include <stdio.h>
-
+#include <stdlib.h>
 int main(){
+    int rowN, colN;
     int **table;
 
-    table[0] = (int **) calloc(4,sizeof(int));
-    table[1] = (int **) calloc(3,sizeof(int));
-    table[2] = (int **) calloc(3,sizeof(int));
-    table[3] = (int **) calloc(7,sizeof(int));
-    table[4] = (int **) calloc(5,sizeof(int));
+    printf("enter no of rows:");
+    scanf("%d",&rowN);
 
+    table = (int**)calloc(rowN+1,sizeof(int*));
+    for(int i=0;i<rowN;i++){
+        printf("Enter no. of elements in each Row:");
+        scanf("%d",&colN);
+        table[i] = (int*)calloc(colN+1,sizeof(int));
+        for(int j=0;j<colN;j++){
+            scanf("%d",&table[i][j]);
+        }
+        table[i][0] = colN;
+        printf("The size of row[%d] = %d elements",i+1,table[i][0]);
+    }
 
-    table[0] = {1,2,3,4};
-    table[1] = {1,2,3};
-    table[2] = {1,2,31};
-    table[3] = {1,2,3,4,5,6,7};
-    table[4] = {1,2,3,4,5};
-
-    printf()
+    table[rowN] = NULL;
+    for (int i = 0; i < rowN; i++)
+        {
+            printf("Displaying %d row elements\n" , i+1);
+            for (int j = 0; j < *table[i]; j++)
+            {
+                printf("%d\t" , table[i][j]);
+            }
+            printf("\n");
+            
+        }
 }
