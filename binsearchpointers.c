@@ -37,14 +37,12 @@ printf("Enter element to find");
 scanf("%d",&target);
 
 
-int *first;
-printf("Enter first element of the array");
-scanf("%d",&first);
+int first = 0;
+int last = MAX-1;
 
-int *last;
-printf("Enter last element of the array");
-scanf("%d",&last);
 
-BinSea(myarray,target,first,last);
+
+
+BinSea(myarray,&target,&first,&last);
 
 }
