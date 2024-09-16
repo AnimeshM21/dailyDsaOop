@@ -16,8 +16,10 @@ int BinSea(int arr[MAX],int *pFind,int *pFirst, int *pLast){
         }
         else if(*pFind>arr[pMid]){
             *pFirst = arr[pMid+1];
+            BinSea(arr,pFind,pFirst,pLast);
         }else{
             *pLast = arr[pMid-1];
+            BinSea(arr,pFind,pFirst,pLast);
         }
     }
 
@@ -42,5 +44,6 @@ int last = MAX-1;
 
 
 int res = BinSea(myarray,&target,&first,&last);
-return res;
+printf("my BOob",res);
+
 }
