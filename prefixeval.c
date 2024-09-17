@@ -25,7 +25,7 @@ int pop() {
         return Stack[top--];
     }
     printf("Stack underflow\n");
-    return -1; // Return an error code or handle it
+    return -1; 
 }
 
 int evalPrefix(char* exp) {
@@ -60,8 +60,8 @@ int evalPrefix(char* exp) {
 }
 
 int main() {
-    char exp[] = "-+7*45+20"; // Corrected to a character array
-    printf("Prefix expression: %s\n", exp);
-    printf("Result: %d\n", evalPrefix(exp));
+    char exp[] = "-+7*45+20"; 
+    printf("Prefix expression: %s", exp);
+    printf("Result: %d", evalPrefix(exp));
     return 0;
 }
