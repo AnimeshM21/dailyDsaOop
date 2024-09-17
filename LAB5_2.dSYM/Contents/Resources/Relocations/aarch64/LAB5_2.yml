@@ -1,0 +1,12 @@
+---
+triple:          'arm64-apple-darwin'
+binary-path:     '/Users/animeshmishra/Desktop/dailyDsaOop/LAB5_2'
+relocations:
+  - { offsetInCU: 0x26, offset: 0x26, size: 0x8, addend: 0x0, symName: _push, symObjAddr: 0x0, symBinAddr: 0x100003E14, symSize: 0x30 }
+  - { offsetInCU: 0x3F, offset: 0x3F, size: 0x8, addend: 0x0, symName: _top, symObjAddr: 0x140, symBinAddr: 0x100008000, symSize: 0x0 }
+  - { offsetInCU: 0x69, offset: 0x69, size: 0x8, addend: 0x0, symName: _Stack, symBinAddr: 0x100008004, symSize: 0x0 }
+  - { offsetInCU: 0x7E, offset: 0x7E, size: 0x8, addend: 0x0, symName: _push, symObjAddr: 0x0, symBinAddr: 0x100003E14, symSize: 0x30 }
+  - { offsetInCU: 0xA2, offset: 0xA2, size: 0x8, addend: 0x0, symName: _pop, symObjAddr: 0x30, symBinAddr: 0x100003E44, symSize: 0x24 }
+  - { offsetInCU: 0xBB, offset: 0xBB, size: 0x8, addend: 0x0, symName: _decToBin, symObjAddr: 0x54, symBinAddr: 0x100003E68, symSize: 0xB4 }
+  - { offsetInCU: 0xFB, offset: 0xFB, size: 0x8, addend: 0x0, symName: _main, symObjAddr: 0x108, symBinAddr: 0x100003F1C, symSize: 0x38 }
+...
