@@ -47,11 +47,12 @@ if(cQ->front == cQ->rear){
 }
 
 int main() {
-int queueSize = 5;
+int queueSize = 1;
 circQueue *cQ = (circQueue *)malloc(sizeof(circQueue));
 cQ->arr = (int *)malloc(queueSize * sizeof(int));
-cQ->front = -1;
-cQ ->rear = -1;
+cQ->front = 0;
+cQ ->rear = 0;
+cQ -> size = queueSize;
 
 
 
