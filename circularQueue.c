@@ -37,11 +37,12 @@ if(cQ->front == cQ->rear){
         printf("QUEUE UNDERFLOW");
     }else{
         int temp = cQ ->front;
-        printf("Queue Elements:");
+        printf("Queue Elements: \n");
         while(temp!= cQ ->rear){
             temp = (temp +1)%cQ -> size;
+            printf("%d \n",cQ ->arr[temp]);
         }
-        printf("%d",cQ ->arr[temp]);
+        
     }
 }
 
