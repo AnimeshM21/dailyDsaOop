@@ -30,7 +30,7 @@ while(top>=0){
 }
 
 int main(){
-    int decimal= 8;
+    int decimal= 7;
     printf("Decimal to Binary conversion is:");
     decToBin(decimal);
 

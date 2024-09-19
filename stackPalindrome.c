@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 
 #define MAX 10
 
@@ -16,10 +17,10 @@ char pop(){
 
 int Palindrome(char *str){
     int len = strlen(str);
-    for(int i=0;i<=len;i++){
+    for(int i=0;i<=len-1;i++){
         push(str[i]);
     }
-    for(int i=0;i<=len;i++){
+    for(int i=0;i<=len-1;i++){
         if(str[i]!=pop()){
             return 0;
         }
