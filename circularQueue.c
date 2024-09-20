@@ -7,6 +7,8 @@ typedef struct{
     int *arr;
     int size;
 }circQueue;
+
+
 circQueue *cQ;
 void enqueue(circQueue *cQ,int item){
     if ((cQ->rear + 1) % cQ->size == cQ->front){
@@ -16,8 +18,6 @@ void enqueue(circQueue *cQ,int item){
         cQ->arr[cQ->rear] = item;
 
     }
-
-
 }
 
 int dequeue(circQueue *cQ){
@@ -37,20 +37,22 @@ if(cQ->front == cQ->rear){
         printf("QUEUE UNDERFLOW");
     }else{
         int temp = cQ ->front;
-        printf("Queue Elements:");
+        printf("Queue Elements: \n");
         while(temp!= cQ ->rear){
             temp = (temp +1)%cQ -> size;
+            printf("%d \n",cQ ->arr[temp]);
         }
-        printf("%d",cQ ->arr[temp]);
+        
     }
 }
 
 int main() {
-int queueSize = 5;
+int queueSize = 1;
 circQueue *cQ = (circQueue *)malloc(sizeof(circQueue));
 cQ->arr = (int *)malloc(queueSize * sizeof(int));
-cQ->front = -1;
-cQ ->rear = -1;
+cQ->front = 0;
+cQ ->rear = 0;
+cQ -> size = queueSize;
 
 
 
