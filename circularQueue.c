@@ -7,6 +7,8 @@ typedef struct{
     int *arr;
     int size;
 }circQueue;
+
+
 circQueue *cQ;
 void enqueue(circQueue *cQ,int item){
     if ((cQ->rear + 1) % cQ->size == cQ->front){
@@ -16,8 +18,6 @@ void enqueue(circQueue *cQ,int item){
         cQ->arr[cQ->rear] = item;
 
     }
-
-
 }
 
 int dequeue(circQueue *cQ){
