@@ -8,7 +8,7 @@ typedef struct
     int prev;
 } NODE;
 
-//Function to traverse the LL i.e show every value in the Linked-List
+// Function to traverse the LL i.e show every value in the Linked-List
 void LLTraversal(NODE *ptr)
 {
 
@@ -102,8 +102,11 @@ int main()
     // head = insertBTW(head,40,2);
     // printf("Inserted a NODE at INDEX of choice \n");
 
-    head = insertAfter(head, second, 69);
-    printf("Inserted a NODE after the given NODE \n");
+    // head = insertEnd(head, 69);
+    // printf("Inserted a NODE at the END of the Linked-List \n");
+
+    // head = insertAfter(head, second, 69);
+    // printf("Inserted a NODE after the given NODE \n");
 
     /*Calling Traversal function again to show the
     Linked-list with the updated values*/
