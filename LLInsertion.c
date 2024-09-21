@@ -5,7 +5,7 @@ typedef struct
 {
     int data;
     struct NODE *next;
-    int prev;
+    
 } NODE;
 
 // Function to traverse the LL i.e show every value in the Linked-List
