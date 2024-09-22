@@ -1,35 +1,71 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-typedef struct{
-    int front ;
+typedef struct
+{
+    int front;
     int rear;
     int *arr;
     int size;
-}Queue;
+} Queue;
 
-void enqueue(Queue *q,int item){
-    if(q->rear == (q->size)-1){
+Queue *createQueue(int size)
+{
+    Queue *q = (Queue *)malloc(sizeof(Queue));
+    q->size = size;
+    q->front = 0;
+    q->rear = -1;
+    q->arr = (int *)malloc(size * sizeof(int));
+    return q;
+}
+
+void enqueue(Queue *q, int item)
+{
+    if (q->rear == (q->size) - 1)
+    {
         printf("The queue is Full");
-    }else{
+    }
+    else
+    {
         q->arr[++(q->rear)] = item;
     }
-
 }
-int dequeue(Queue *q){
-    if(q->front == q->rear ){
+int dequeue(Queue *q)
+{
+    if (q->front == q->rear)
+    {
         printf("The Queue is Empty");
-    }else{
-        return q->arr[(q->front)++];
+    }
+    else
+    {
+        return q->arr[(q->front)--];
     }
 }
 
-int main(){
+void display(Queue *cQ)
+{
+    if (q->front == q->rear)
+    {
+        printf("QUEUE UNDERFLOW");
+    }
+    else
+    {
+        int temp = q->front;
+        printf("Queue Elements: \n");
+        while (temp != q->rear)
+        {
+            printf("%d \n", q->arr[temp]);
+            temp++;
+        }
+    }
+}
+
+int main()
+{
 
     Queue q;
     q.front = -1;
     q.rear = -1;
     q.size = 10;
-    q.arr = (int*) malloc(q.size* (sizeof(int)));
-
+    q.arr = (int *)malloc(q.size * (sizeof(int)));
 }
