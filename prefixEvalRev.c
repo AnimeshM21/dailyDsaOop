@@ -35,7 +35,7 @@ int evalPrefix(char* exp){
     int len = strlen(exp);
     for(int i = len-1;i>=0;i--){
         if(isdigit(exp[i])){
-            push(exp[i]-'\0');
+            push(exp[i]-'0');
         }else{
             int operand1 = pop();
             int operand2= pop();
