@@ -37,7 +37,7 @@ int postfixEval(char exp[])
     {
         if (isdigit(exp[i]))
         {
-            push(exp[i] - '\0');
+            push(exp[i] - '0');
         }
         else
         {
@@ -50,7 +50,7 @@ int postfixEval(char exp[])
                 push(operand1 + operand2);
                 break;
             case '-':
-                push(operand1 - operand2);
+                push(operand2 - operand1);
                 break;
             case '*':
                 push(operand1 * operand2);

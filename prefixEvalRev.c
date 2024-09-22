@@ -12,7 +12,7 @@ void push(int value)
 {
     if (top == MAX - 1)
     {
-        printf("Stack Overflow");
+        printf("STACK OVERFLOW");
     }
     else
     {
