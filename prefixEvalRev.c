@@ -31,41 +31,47 @@ int pop()
     }
 }
 
-int evalPrefix(char* exp){
+int evalPrefix(char *exp)
+{
     int len = strlen(exp);
-    for(int i = len-1;i>=0;i--){
-        if(isdigit(exp[i])){
-            push(exp[i]-'0');
-        }else{
+    for (int i = len - 1; i >= 0; i--)
+    {
+        if (isdigit(exp[i]))
+        {
+            push(exp[i] - '0');
+        }
+        else
+        {
             int operand1 = pop();
-            int operand2= pop();
+            int operand2 = pop();
 
-            switch (exp[i]){
-                case '+':
-                    push(operand1+operand2);
-                    break;
-                case '-':
-                    push(operand1-operand2);
-                    break;
-                case '*':
-                    push(operand1*operand2);
-                    break;
-                case '/':
-                    push(operand1/operand2);
-                    break;
-                default:
-                    printf("Invalid Operator: %c",exp[i]);
-                    return -1; 
+            switch (exp[i])
+            {
+            case '+':
+                push(operand1 + operand2);
+                break;
+            case '-':
+                push(operand1 - operand2);
+                break;
+            case '*':
+                push(operand1 * operand2);
+                break;
+            case '/':
+                push(operand1 / operand2);
+                break;
+            default:
+                printf("Invalid Operator: %c", exp[i]);
+                return -1;
             }
         }
     }
     return pop();
 }
 
-
-int main(){
+int main()
+{
     char exp[100] = "-+7*45-/20";
-    printf("The expression: %s",exp);
-    printf("Result: %d",evalPrefix(exp));
-    return 0; 
+    printf("The expression: %s", exp);
+    printf("Result: %d", evalPrefix(exp));
+    return 0;
 }

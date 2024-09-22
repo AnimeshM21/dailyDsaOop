@@ -169,7 +169,7 @@ int main()
 {
     char exp[MAX] = "1-56+99/6";
     char prefix[MAX];
-    inToPre(exp,prefix);
+    inToPre(exp, prefix);
     printf("prefix is: %s\n", prefix);
     return 0;
 }
