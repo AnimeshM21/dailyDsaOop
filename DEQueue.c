@@ -13,13 +13,25 @@ Queue *createQueue(int size)
 {
     Queue *q = (Queue *)malloc(sizeof(Queue));
     q->size = size;
-    q->front = 0;
-    q->rear = -1;
+    q->front = -1 ;
+    q->rear = -1 ;
     q->arr = (int *)malloc(size * sizeof(int));
     return q;
 }
 
-void enqueue(Queue *q, int item)
+void enqueueFront(Queue *q, int item)
+{
+    if (q->front == q->rear)
+    {
+        printf("The queue is Full");
+    }
+    else
+    {
+        q->arr[--(q->front)] = item;
+    }
+}
+
+void enqueueRear(Queue *q, int item)
 {
     if (q->rear == (q->size) - 1)
     {
@@ -30,7 +42,7 @@ void enqueue(Queue *q, int item)
         q->arr[++(q->rear)] = item;
     }
 }
-int dequeue(Queue *q)
+int dequeueFront(Queue *q)
 {
     if (q->front == q->rear)
     {
@@ -42,7 +54,19 @@ int dequeue(Queue *q)
     }
 }
 
-void display(Queue *cQ)
+int dequeueRear(Queue *q)
+{
+    if (q->front == q->rear)
+    {
+        printf("The Queue is Empty");
+    }
+    else
+    {
+        return q->arr[(q->rear)--];
+    }
+}
+
+void display(Queue *q)
 {
     if (q->front == q->rear)
     {
@@ -60,12 +84,18 @@ void display(Queue *cQ)
     }
 }
 
-int main()
-{
+int main() {
+    int size = 5;
+    Queue *q = createQueue(size);
 
-    Queue q;
-    q.front = -1;
-    q.rear = -1;
-    q.size = 10;
-    q.arr = (int *)malloc(q.size * (sizeof(int)));
+    
+    enqueueRear(q, 90);
+    enqueueRear(q, 100);
+    enqueueFront(q, 10);
+    display(q);
+    // printf("Dequeued from front: %d\n", dequeueFront(q));
+    // printf("Dequeued from rear: %d\n", dequeueRear(q));
+
+    
+    return 0;
 }
