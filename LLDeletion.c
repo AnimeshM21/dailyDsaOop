@@ -32,7 +32,8 @@ NODE *deleteIndex(NODE *head, int index)
 {
     NODE *temp1 = head;
     NODE *temp2 = temp1->next;
-    for(int i=0;i<index-1;i++){
+    for (int i = 0; i < index - 1; i++)
+    {
         temp1 = temp1->next;
         temp2 = temp2->next;
     }
@@ -46,7 +47,8 @@ NODE *deleteEnd(NODE *head)
 {
     NODE *temp1 = head;
     NODE *temp2 = temp1->next;
-    while(temp2->next!=NULL){
+    while (temp2->next != NULL)
+    {
         temp1 = temp1->next;
         temp2 = temp2->next;
     }
@@ -60,14 +62,16 @@ NODE *deleteElement(NODE *head, int value)
 {
     NODE *temp1 = head;
     NODE *temp2 = temp1->next;
-    while(temp2->data != value && temp2->next !=NULL){
+    while (temp2->data != value && temp2->next != NULL)
+    {
         temp1 = temp1->next;
         temp2 = temp2->next;
     }
-    temp1->next = temp2->next;
-    free(temp2);
-    
-    
+    if (temp2->data == value)
+    {
+        temp1->next = temp2->next;
+        free(temp2);
+    }
     return head;
 }
 
@@ -101,11 +105,11 @@ int main()
 
     // head = deleteIndex(head, 2);
     // printf("Linked List after deletion of Node at given Index\n");
-    
+
     // head = deleteEnd(head);
     // printf("Linked List after deletion of Node at End\n");
 
-    head = deleteElement(head,70);
+    head = deleteElement(head, 70);
     printf("Linked List after deletion of the particular element\n");
     LLTraversal(head);
 
