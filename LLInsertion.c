@@ -5,7 +5,7 @@ typedef struct
 {
     int data;
     struct NODE *next;
-    
+
 } NODE;
 
 // Function to traverse the LL i.e show every value in the Linked-List
@@ -43,7 +43,7 @@ NODE *insertBTW(NODE *head, int value, int index)
     nptr->data = value;
     nptr->next = temp->next;
     temp->next = nptr;
-    
+
     return head;
 }
 
@@ -51,7 +51,7 @@ NODE *insertBTW(NODE *head, int value, int index)
 NODE *insertEnd(NODE *head, int value)
 {
     NODE *nptr = (NODE *)malloc(sizeof(NODE));
-    
+
     NODE *temp = head;
     while (temp->next != NULL)
     {

@@ -8,7 +8,7 @@ typedef struct{
     int top;
 }STACK;
 
-void newStack(STACK *stack){
+void initStack(STACK *stack){
     stack->top = -1;
 }
 
@@ -47,7 +47,7 @@ int pop(STACK *stack){
 
 int main() {
     STACK stack;
-    newStack(&stack);
+    initStack(&stack);
     
     
     push(&stack, 7);
@@ -63,6 +63,6 @@ int main() {
     isEmpty(&stack);
     isFull(&stack);
     
-    printf("the Stack is :%d",stack);
+    printf("the Stack is :%d",stack->item[]);
     return 0;
 }
