@@ -1,8 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-
-
 typedef struct
 {
     int data;
@@ -21,7 +19,7 @@ void LLTraversal(NODE *ptr)
     }
 }
 
-void enqueue( int value)
+void enqueue(int value)
 {
     NODE *n = (NODE *)malloc(sizeof(NODE));
     if (n == NULL)
@@ -47,17 +45,17 @@ void enqueue( int value)
 
 int dequeue()
 {
-    int value  = -1;
-    NODE *temp= front ;
+    int value = -1;
+    NODE *temp = front;
     if (front == NULL)
     {
         printf("QUEUE UNDERFLOW \n");
     }
     else
     {
-       front = front->next; 
-       value = temp->data;
-       free(temp);
+        front = front->next;
+        value = temp->data;
+        free(temp);
     }
     return value;
 }
@@ -72,9 +70,9 @@ int main()
     enqueue(23);
     enqueue(3);
     int element = dequeue();
-    
+
     printf("Queue after Enqueue and Dequeue: \n");
-    printf("The Dequeued element is %d \n",element);
+    printf("The Dequeued element is %d \n", element);
     LLTraversal(front);
 
     return 0;

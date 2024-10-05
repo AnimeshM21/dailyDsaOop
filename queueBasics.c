@@ -13,7 +13,7 @@ Queue *createQueue(int size)
 {
     Queue *q = (Queue *)malloc(sizeof(Queue));
     q->size = size;
-    q->front = 0;
+    q->front = -1;
     q->rear = -1;
     q->arr = (int *)malloc(size * sizeof(int));
     return q;

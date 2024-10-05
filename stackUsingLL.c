@@ -34,6 +34,7 @@ int isFull(NODE *top)
     return 0;
 }
 
+//Push function here is like inserting NODE at index 0
 NODE *push(NODE *top, int value)
 {
     if (isFull(top))
@@ -51,6 +52,7 @@ NODE *push(NODE *top, int value)
     }
 }
 
+//Pop is printing value at Index 0 and removing it using free
 int pop(NODE **top)
 {
     if (isEmpty(*top))
