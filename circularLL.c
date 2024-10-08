@@ -17,7 +17,7 @@ void LLTraversal(NODE *head)
         ptr = ptr->next;
     } while (ptr != head);
 }
-
+// Function to insert a Node at the beginning of a Circular Linked-List
 struct NODE *insertAtHead(NODE *head, int item)
 {
     struct NODE *ptr = (struct NODE *)malloc(sizeof(struct NODE));
@@ -31,6 +31,24 @@ struct NODE *insertAtHead(NODE *head, int item)
     p->next = ptr;
     ptr->next = head;
     head = ptr;
+    return head;
+}
+
+// Function to insert a Node at any given index of a Circular Linked-List
+NODE *insertBTW(NODE *head, int value, int index)
+{
+    NODE *nptr = (NODE *)malloc(sizeof(NODE));
+    NODE *temp = head;
+    int i = 0;
+    while (i != index - 1)
+    {
+        temp = temp->next;
+        i++;
+    }
+    nptr->data = value;
+    nptr->next = temp->next;
+    temp->next = nptr;
+
     return head;
 }
 int main()
@@ -58,6 +76,9 @@ int main()
     LLTraversal(head);
     printf("Circular Linked list after Insertion: \n");
     head = insertAtHead(head, 40);
+    printf("Inserted a NODE at INDEX of choice \n");
+    head = insertBTW(head, 69, 2);
+    
     LLTraversal(head);
 
     return 0;
