@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include <malloc.h>
+#include <stdlib.h>
 
 typedef struct
 {
@@ -12,7 +12,7 @@ struct NODE *createNode(int data)
 {
     struct NODE *newNode;
     newNode = (struct NODE *)malloc(sizeof(struct NODE));
-    newNode->data = 1;
+    newNode->data = data;
     newNode->left = NULL;
     newNode->right = NULL;
 
