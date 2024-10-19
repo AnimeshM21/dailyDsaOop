@@ -69,7 +69,12 @@ int main()
 
     inOrder(root);
     printf("\n");
-    printf("%d",isBST(root));
+    // printf("%d",isBST(root));
+    if(isBST(root)){
+        printf("This is a Binary Search Tree");
+    }else{
+        printf("This is not a Binary Search Tree");
+    }
 
     return 0;
 }
