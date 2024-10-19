@@ -19,17 +19,6 @@ struct NODE *createNode(int data)
     return newNode;
 }
 
-void inOrder(struct NODE *mynode)
-{
-    if (mynode != NULL)
-    {
-
-        inOrder(mynode->left);
-        printf("Tree Elements: %d \n", mynode->data);
-        inOrder(mynode->right);
-    }
-}
-
 int isBST(struct NODE *mynode)
 {
     static struct NODE *prev = NULL;
@@ -51,19 +40,24 @@ int isBST(struct NODE *mynode)
         return 1;
     }
 }
-struct NODE* searchInBST(struct NODE* mynode, int key){
-    if(mynode == NULL){
-        return NULL;
+struct NODE *searchInBST(struct NODE *mynode, int key)
+{
+    while (mynode != NULL)
+    {
+        if (mynode->data == key)
+        {
+            return mynode;
+        }
+        else if (mynode->data < key)
+        {
+            mynode = mynode->right;
+        }
+        else
+        {
+            mynode = mynode->left;
+        }
     }
-    if(mynode->data == key){
-        return mynode;
-    }
-    else if(mynode->data<key){
-        return searchInBST(mynode->right,key);
-    }
-     else{
-        return searchInBST(mynode->left,key);
-    }
+    return NULL;
 }
 
 int main()
@@ -71,7 +65,7 @@ int main()
     struct NODE *root = createNode(9);
     struct NODE *lchild1 = createNode(2);
     struct NODE *rchild2 = createNode(25);
-    struct NODE *lchild11 = createNode(10);
+    struct NODE *lchild11 = createNode(1);
     struct NODE *rchild12 = createNode(4);
     struct NODE *lchild21 = createNode(16);
     struct NODE *rchild22 = createNode(36);
@@ -83,15 +77,22 @@ int main()
     rchild2->left = lchild21;
     rchild2->right = rchild22;
 
-    inOrder(root);
-    printf("\n");
-    struct NODE* n = searchInBST(root,9);
-    if(n!=NULL){
-    printf("ELEMENT FOUND: %d",n->data);
+    if (!isBST(root))
+    {
+        printf("This is not a Binary Tree!");
     }
-    else{
-        printf("ELEMENT NOT FOUND");
+    else
+    {
+        printf("\n");
+        struct NODE *n = searchInBST(root, 1);
+        if (n != NULL)
+        {
+            printf("ELEMENT FOUND: %d", n->data);
+        }
+        else
+        {
+            printf("ELEMENT NOT FOUND");
+        }
     }
-
     return 0;
 }
