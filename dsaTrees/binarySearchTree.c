@@ -50,6 +50,8 @@ int isBST(struct NODE *mynode)
     }
 }
 
+
+
 int main()
 {
     struct NODE *root = createNode(9);
@@ -69,12 +71,12 @@ int main()
 
     inOrder(root);
     printf("\n");
+    
     // printf("%d",isBST(root));
     if(isBST(root)){
-        printf("This is a Binary Search Tree");
+        printf("This Tree is a BST");
     }else{
-        printf("This is not a Binary Search Tree");
+        printf("This Tree is not a BST");
     }
-
     return 0;
 }

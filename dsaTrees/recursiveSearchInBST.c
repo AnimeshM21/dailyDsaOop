@@ -51,6 +51,20 @@ int isBST(struct NODE *mynode)
         return 1;
     }
 }
+struct NODE* searchInBST(struct NODE* mynode, int key){
+    if(mynode == NULL){
+        return NULL;
+    }
+    if(mynode->data == key){
+        return mynode;
+    }
+    else if(mynode->data<key){
+        return searchInBST(mynode->right,key);
+    }
+     else{
+        return searchInBST(mynode->left,key);
+    }
+}
 
 int main()
 {
@@ -71,6 +85,13 @@ int main()
 
     inOrder(root);
     printf("\n");
+    struct NODE* n = searchInBST(root,9);
+    if(n!=NULL){
+    printf("Found: %d",n->data);
+    }
+    else{
+        printf("NOT FOUND");
+    }
 
     return 0;
 }
