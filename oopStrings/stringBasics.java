@@ -1,13 +1,12 @@
-import java.util.* ; 
-
+import java.util.*;
 
 /**
  * stringBasics
  */
 public class stringBasics {
-    public static void main(String args[]){
-        // String name  = new String("Animesh Mishra");
-        // String name  = "Animesh Mishra";
+    public static void main(String args[]) {
+        // String name = new String("Animesh Mishra");
+        // String name = "Animesh Mishra";
         // System.out.println(name);
 
         Scanner sc = new Scanner(System.in);
@@ -15,5 +14,5 @@ public class stringBasics {
         String myname = sc.nextLine();
         System.out.println(myname);
     }
-    
+
 }
