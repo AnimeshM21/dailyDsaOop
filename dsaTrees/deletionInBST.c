@@ -69,7 +69,6 @@ struct NODE *deleteInBST(struct NODE *mynode, int value)
         return NULL;
     }
 
-    
     if (value < mynode->data)
     {
         mynode->left = deleteInBST(mynode->left, value);
@@ -119,15 +118,17 @@ int main()
     rchild2->left = lchild21;
     rchild2->right = rchild22;
 
+    inOrder(root);
+
     if (!isBST(root))
     {
         printf("This is not a Binary Tree!");
     }
     else
     {
-       root = deleteInBST(root, 16);
+        root = deleteInBST(root, 16);
     }
-
+    printf("\n");
     inOrder(root);
 
     return 0;
