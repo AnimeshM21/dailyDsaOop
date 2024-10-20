@@ -19,38 +19,46 @@ struct NODE *createNode(int data)
     return newNode;
 }
 
-void inOrder(struct NODE *mynode)
-{
-    if (mynode != NULL)
-    {
-   
-        inOrder(mynode->left);
-        printf("Tree Elements: %d \n", mynode->data);
-        inOrder(mynode->right);
-    }
-}
-
 int isBST(struct NODE *mynode)
 {
     static struct NODE *prev = NULL;
     if (mynode != NULL)
     {
-        if (!isBST(mynode -> left))
+        if (!isBST(mynode->left))
         {
             return 0;
         }
-        if(prev!= NULL && mynode->data<= prev->data){
+        if (prev != NULL && mynode->data <= prev->data)
+        {
             return 0;
         }
         prev = mynode;
         return isBST(mynode->right);
     }
-    else{
+    else
+    {
         return 1;
     }
 }
-
-
+struct NODE *recsearchInBST(struct NODE *mynode, int key)
+{
+    if (mynode == NULL)
+    {
+        return NULL;
+    }
+    if (mynode->data == key)
+    {
+        return mynode;
+    }
+    else if (mynode->data < key)
+    {
+        return recsearchInBST(mynode->right, key);
+    }
+    else
+    {
+        return recsearchInBST(mynode->left, key);
+    }
+}
 
 int main()
 {
@@ -69,14 +77,22 @@ int main()
     rchild2->left = lchild21;
     rchild2->right = rchild22;
 
-    inOrder(root);
-    printf("\n");
-    
-    // printf("%d",isBST(root));
-    if(isBST(root)){
-        printf("This Tree is a BST");
-    }else{
-        printf("This Tree is not a BST");
+    if (!isBST(root))
+    {
+        printf("This is not a Binary Tree!");
+    }
+    else
+    {
+        printf("\n");
+        struct NODE *n = recsearchInBST(root, 9);
+        if (n != NULL)
+        {
+            printf("ELEMENT FOUND: %d", n->data);
+        }
+        else
+        {
+            printf("ELEMENT NOT FOUND");
+        }
     }
     return 0;
 }
