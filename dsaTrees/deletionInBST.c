@@ -68,24 +68,37 @@ struct NODE *deleteInBST(struct NODE *mynode, int value)
     {
         return NULL;
     }
-    if (mynode->left == NULL && mynode->right == NULL)
+
+    
+    if (value < mynode->data)
     {
-        free(mynode);
+        mynode->left = deleteInBST(mynode->left, value);
     }
-    if (mynode->data < value)
+    else if (value > mynode->data)
     {
-        deleteInBST(mynode->right, value);
-    }
-    else if (mynode->data > value)
-    {
-        deleteInBST(mynode->left, value);
+        mynode->right = deleteInBST(mynode->right, value);
     }
     else
     {
+
+        if (mynode->left == NULL)
+        {
+            struct NODE *temp = mynode->right;
+            free(mynode);
+            return temp;
+        }
+        else if (mynode->right == NULL)
+        {
+            struct NODE *temp = mynode->left;
+            free(mynode);
+            return temp;
+        }
+
         iPre = inOrderPre(mynode);
         mynode->data = iPre->data;
-        deleteInBST(mynode->left, iPre->data);
+        mynode->left = deleteInBST(mynode->left, iPre->data);
     }
+
     return mynode;
 }
 
@@ -112,5 +125,10 @@ int main()
     }
     else
     {
+       root = deleteInBST(root, 16);
     }
+
+    inOrder(root);
+
+    return 0;
 }
