@@ -2,9 +2,14 @@ class Employee {
     private int id;
     private String name;
 
-    public Employee() {
-        id = 1;
-        name = "Shyam";
+    // public Employee() {
+    //     id = 1;
+    //     name = "Shyam";
+    // }
+
+    public Employee(String myname, int myid) {
+        id = myid;
+        name = myname;
     }
 
     public String getName() {
@@ -26,7 +31,7 @@ class Employee {
 
 public class constructors {
     public static void main(String args[]) {
-        Employee emp = new Employee();
+        Employee emp = new Employee("Animesh",1);
 
         // emp.setName("Your Name");
         // emp.setId(55);
