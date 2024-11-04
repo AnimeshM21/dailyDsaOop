@@ -5,7 +5,7 @@ public class stringMethods {
 
         // STRINGS ARE IMMUTABLE SO ANY CHANGES TO A EXISTING STRING RETURN A NEW STRING
 
-        String name = "Animesh";
+        // String name = "Animesh";
 
         // // String name = new String("Animesh Mishra");
         // String name = "Animesh Mishra";
@@ -52,16 +52,41 @@ public class stringMethods {
         // certain substring
         // System.out.println(name.endsWith("sh"));
 
-        // // the charAt() methods returns the character present at that particular index entered
+        // // the charAt() methods returns the character present at that particular
+        // index entered
         // System.out.println(name.charAt(3));
 
-        // // the indexOf() methods returns the first occurence index of the character entered
+        // // the indexOf() methods returns the first occurence index of the character
+        // entered
         // System.out.println(name.indexOf("m"));
 
-        // // the indexOf() methods returns the index of the character entered beyond the index entered
+        // // the indexOf() methods returns the index of the character entered beyond
+        // the index entered
+        // String myname = "Animesh Mishra";
+        // System.out.println(name.indexOf("i",6));
 
-        String myname = "Animesh Mishra";
-        System.out.println(name.indexOf("i",6));
+        // the lastIndexOf() methods returns the last occurence index of the character
+        // entered
+        // String myname = "Animesh Mishra";
+        // System.out.println(name.lastIndexOf("i"));
+
+        // the lastIndexOf() methods returns the last occurence index of the character
+        // entered before the entered index
+        // String myname = "Animesh Mishra";
+        // System.out.println(name.lastIndexOf("i",6));
+
+        // the equals() methods returns TRUE AND FALSE if the string is equal to the
+        // string entered
+        // String myname = "Animesh Mishra";
+        // System.out.println(name.equals("Animesh"));
+
+        // the equalsIgnoreCase() methods returns TRUE AND FALSE if the string is equal
+        // to the string entered ignoring uppercase and lowercase letters
+        // String myname = "Animesh Mishra";
+        // System.out.println(name.equalsIgnoreCase("Animesh"));
+
+        // back slash is used to escape the character here for the double quote
+        System.out.println("Hello I am Animesh \" double quote");
     }
 
 }
