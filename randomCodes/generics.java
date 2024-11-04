@@ -19,8 +19,6 @@ class generics{
 
         System.out.println("value: " + str);
 
-        // This will not compile because Gen is an Integer type
-
-        
+       
     }
 }
