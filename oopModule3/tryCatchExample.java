@@ -13,7 +13,8 @@ public class tryCatchExample {
         } catch (Exception e) {
             System.out.println("Failed to divide because: ");
             System.out.println(e);
+        }finally{
+            System.out.println("This code is always executed");
         }
-        System.out.println("End of program");
     }
 }

@@ -28,8 +28,8 @@ public class nestedTryCatch {
             System.out.println("Some other exception occured!");
             System.out.println(e);
         }
-
-        System.out.println("");
-        System.out.println("End of Program");
+        finally{
+            System.out.println("This code is always executed");
+        }
     }
 }

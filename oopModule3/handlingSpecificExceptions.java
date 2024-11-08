@@ -25,8 +25,8 @@ public class handlingSpecificExceptions {
         } catch (Exception e) {
             System.out.println("Some other exception occured!");
             System.out.println(e);
+        }finally{
+            System.out.println("This code is always executed");
         }
-        System.out.println("");
-        System.out.println("End of Program");
     }
 }
