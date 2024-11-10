@@ -1,3 +1,5 @@
+
+// Evaluate a given prefix expression using stack.
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
