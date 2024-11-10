@@ -51,16 +51,14 @@ int isOperator(char ch) {
     return ch == '*' || ch == '/' || ch == '+' || ch == '-' || ch == '^';
 }
 
-void prefixToPostfix(char prefix[], char postfix[]) {
+void postfixToInfix(char postfix[], char infix[]) {
     Stack stack;
     initStack(&stack);
 
-    int length = strlen(prefix);
-
-    revString(prefix);
+    int length = strlen(postfix);
 
     for (int i = 0; i < length; i++) {
-        char ch = prefix[i];
+        char ch = postfix[i];
 
         if (isalnum(ch)) {
             char operand[2] = {ch, '\0'};
@@ -71,24 +69,24 @@ void prefixToPostfix(char prefix[], char postfix[]) {
             pop(&stack, op2);
 
             char temp[MAX];
-            snprintf(temp, MAX, "%s %s %c", op1, op2, ch);
+            snprintf(temp, MAX, "%s %c %s", op1,ch,op2);
             push(&stack, temp);
         }
     }
 
-    pop(&stack, postfix);
+    pop(&stack, infix);
 }
 
 int main() {
-    char prefix[MAX], postfix[MAX];
+    char postfix[MAX], infix[MAX];
 
-    printf("Enter your prefix expression to convert to postfix: ");
-    fgets(prefix, MAX, stdin);
-    prefix[strcspn(prefix, "\n")] = '\0';
+    printf("Enter your postfix expression to convert to infix: ");
+    fgets(postfix, MAX, stdin);
+    postfix[strcspn(postfix, "\n")] = '\0';
 
-    prefixToPostfix(prefix, postfix);
+    postfixToInfix(postfix, infix);
 
-    printf("The postfix expression is: %s\n", postfix);
+    printf("The infix expression is: %s\n", infix);
 
     return 0;
 }
