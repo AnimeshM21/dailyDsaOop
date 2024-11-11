@@ -116,4 +116,6 @@ int main(){
     printf("After poping elements");
     display1(&stack);
     display2(&stack);
+
+    return 0;
 }
