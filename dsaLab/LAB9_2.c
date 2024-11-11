@@ -16,4 +16,3 @@ struct Node *initNode(int value)
     newNode->next = NULL;
     return newNode;
 }
-

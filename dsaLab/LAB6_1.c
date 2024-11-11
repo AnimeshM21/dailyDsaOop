@@ -10,59 +10,73 @@
 int Stack[MAX];
 int top = -1;
 
-void push(int item) {
-    if (top < MAX - 1) {
+void push(int item)
+{
+    if (top < MAX - 1)
+    {
         Stack[++top] = item;
-    } else {
+    }
+    else
+    {
         printf("Stack overflow\n");
     }
 }
 
-int isEmpty() {
+int isEmpty()
+{
     return top == -1;
 }
 
-int pop() {
-    if (!isEmpty()) {
+int pop()
+{
+    if (!isEmpty())
+    {
         return Stack[top--];
     }
     printf("Stack underflow\n");
-    return -1; 
+    return -1;
 }
 
-int evalPrefix(char* exp) {
+int evalPrefix(char *exp)
+{
     int len = strlen(exp);
-    for (int i = len - 1; i >= 0; i--) {
-        if (isdigit(exp[i])) {
+    for (int i = len - 1; i >= 0; i--)
+    {
+        if (isdigit(exp[i]))
+        {
             push(exp[i] - '0');
-        } else {
+        }
+        else
+        {
             int operand1 = pop();
             int operand2 = pop();
-            
-            switch (exp[i]) {
-                case '+':
-                    push(operand1 + operand2);
-                    break;
-                case '-':
-                    push(operand1 - operand2);
-                    break;
-                case '/':
-                    push(operand1 / operand2);
-                    break;
-                case '*':
-                    push(operand1 * operand2);
-                    break;
-                default:
-                    printf("Invalid operator encountered: %c\n", exp[i]);
-                    return -1;
+
+            switch (exp[i])
+            {
+            case '+':
+                push(operand1 + operand2);
+                break;
+            case '-':
+                push(operand1 - operand2);
+                break;
+            case '/':
+                push(operand1 / operand2);
+                break;
+            case '*':
+                push(operand1 * operand2);
+                break;
+            default:
+                printf("Invalid operator encountered: %c\n", exp[i]);
+                return -1;
             }
         }
     }
     return pop();
 }
 
-int main() {
-    char exp[] = "-+7*45+20"; 
+int main()
+{
+    char exp[] = "-+7*45+20";
     printf("Prefix expression: %s", exp);
     printf("Result: %d", evalPrefix(exp));
     return 0;
