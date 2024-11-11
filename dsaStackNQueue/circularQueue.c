@@ -1,78 +1,89 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-typedef struct{
-    int front ;
+typedef struct
+{
+    int front;
     int rear;
     int *arr;
     int size;
-}circQueue;
-
+} circQueue;
 
 circQueue *cQ;
-void enqueue(circQueue *cQ,int item){
-    if ((cQ->rear + 1) % cQ->size == cQ->front){
+void enqueue(circQueue *cQ, int item)
+{
+    if ((cQ->rear + 1) % cQ->size == cQ->front)
+    {
         printf("Queue OVERFLOW");
-    }else{
+    }
+    else
+    {
         cQ->rear = (cQ->rear + 1) % cQ->size;
         cQ->arr[cQ->rear] = item;
-
     }
 }
 
-int dequeue(circQueue *cQ){
+int dequeue(circQueue *cQ)
+{
     int item = -1;
-    if(cQ->front == cQ->rear){
+    if (cQ->front == cQ->rear)
+    {
         printf("QUEUE UNDERFLOW");
-    }else{
-        cQ -> front  = (cQ -> front+1)% cQ -> size;
-        
     }
-    return item = cQ ->arr[ cQ -> front];
+    else
+    {
+        cQ->front = (cQ->front + 1) % cQ->size;
+    }
+    return item = cQ->arr[cQ->front];
 }
 
-void display(circQueue *cQ){
-    
-if(cQ->front == cQ->rear){
+void display(circQueue *cQ)
+{
+
+    if (cQ->front == cQ->rear)
+    {
         printf("QUEUE UNDERFLOW");
-    }else{
-        int temp = cQ ->front;
+    }
+    else
+    {
+        int temp = cQ->front;
         printf("Queue Elements: \n");
-        while(temp!= cQ ->rear){
-            temp = (temp +1)%cQ -> size;
-            printf("%d \n",cQ ->arr[temp]);
+        while (temp != cQ->rear)
+        {
+            temp = (temp + 1) % cQ->size;
+            printf("%d \n", cQ->arr[temp]);
         }
-        
     }
 }
 
-int main() {
-int queueSize = 1;
-circQueue *cQ = (circQueue *)malloc(sizeof(circQueue));
-cQ->arr = (int *)malloc(queueSize * sizeof(int));
-cQ->front = 0;
-cQ ->rear = 0;
-cQ -> size = queueSize;
+int main()
+{
+    int queueSize = 1;
+    circQueue *cQ = (circQueue *)malloc(sizeof(circQueue));
+    cQ->arr = (int *)malloc(queueSize * sizeof(int));
+    cQ->front = 0;
+    cQ->rear = 0;
+    cQ->size = queueSize;
 
+    int choice, item;
+    while (1)
+    {
+        printf("1.Enqueue \n");
+        printf("2.Dequeue \n");
+        printf("3.Display \n");
+        printf("4.Exit \n ");
+        printf("Enter your choice \n");
+        scanf("%d", &choice);
 
-
-int choice, item;
-while(1){
-    printf("1.Enqueue \n");
-    printf("2.Dequeue \n");
-    printf("3.Display \n");
-    printf("4.Exit \n ");
-    printf("Enter your choice \n");
-    scanf("%d",&choice);
-
-    switch (choice){
+        switch (choice)
+        {
         case 1:
             printf("Enter Element");
-            scanf("%d",&item);
-            enqueue(cQ,item);
+            scanf("%d", &item);
+            enqueue(cQ, item);
             break;
         case 2:
-            printf("Dequeued item: %d \n",dequeue(cQ));
+            printf("Dequeued item: %d \n", dequeue(cQ));
             display(cQ);
             break;
         case 3:
@@ -84,9 +95,6 @@ while(1){
             break;
         default:
             printf("Invalid Choice");
-
-
+        }
     }
 }
-}
-
