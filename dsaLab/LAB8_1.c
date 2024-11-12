@@ -51,46 +51,53 @@ void PQueueInsert(PQueue *pq, int value)
         i--;
     }
 
-    pq->arr[i+1] = value;
+    pq->arr[i + 1] = value;
     pq->size++;
 }
 
-int PQueueDelete(PQueue *pq){
-    if(isEmpty(pq)){
+int PQueueDelete(PQueue *pq)
+{
+    if (isEmpty(pq))
+    {
         printf("The queue is Empty");
         return -1;
     }
 
     int small = pq->arr[0];
 
-    for(int i=0;i<(pq->size)-1;i++){
-        pq->arr[i] = pq->arr[i+1];
+    for (int i = 0; i < (pq->size) - 1; i++)
+    {
+        pq->arr[i] = pq->arr[i + 1];
     }
     printf("Just Deleted %d from the queue", small);
     pq->size--;
     return small;
 }
 
-void displayPQueue(PQueue *pq){
-    if(isEmpty(pq)){
+void displayPQueue(PQueue *pq)
+{
+    if (isEmpty(pq))
+    {
         printf("Nothing to display");
         return;
     }
 
     printf("THE PRIORITY QUEUE: \n");
-    for(int i=0;i<pq->size;i++){
+    for (int i = 0; i < pq->size; i++)
+    {
         printf("%d \n", pq->arr[i]);
     }
     printf("\n");
 }
 
-int main(){
+int main()
+{
     PQueue pQueue;
     initPQueue(&pQueue);
-    PQueueInsert(&pQueue,7);
-    PQueueInsert(&pQueue,1);
-    PQueueInsert(&pQueue,9);
-    PQueueInsert(&pQueue,4);
+    PQueueInsert(&pQueue, 7);
+    PQueueInsert(&pQueue, 1);
+    PQueueInsert(&pQueue, 9);
+    PQueueInsert(&pQueue, 4);
 
     displayPQueue(&pQueue);
 
@@ -100,5 +107,4 @@ int main(){
     displayPQueue(&pQueue);
 
     return 0;
-
 }
