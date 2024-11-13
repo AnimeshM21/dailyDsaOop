@@ -5,40 +5,48 @@
 
 #define MAX 20;
 
-typedef struct{
+typedef struct
+{
     int *arr;
     int front;
     int rear;
     int size;
-}Queue;
+} Queue;
 
-void initQueue(Queue *q,int size){
-    Queue q = (Queue*)malloc(sizeof(Queue));
+void initQueue(Queue *q, int size)
+{
+    Queue q = (Queue *)malloc(sizeof(Queue));
     q->front = -1;
     q->rear = -1;
-    q->arr = (int*)malloc(size * sizeof(int));
+    q->arr = (int *)malloc(size * sizeof(int));
     q->size = size;
 }
 
-void insertRear(Queue *q, int value){
-    if(q->rear == q->size-1){
+void insertRear(Queue *q, int value)
+{
+    if (q->rear == q->size - 1)
+    {
         printf("Queue is full");
         return;
     }
-    
+
     q->arr[++(q->rear)] = value;
 }
 
-void insertFront(Queue *q, int value){
-    if(q->front == q->rear){
+void insertFront(Queue *q, int value)
+{
+    if (q->front == q->rear)
+    {
         printf("Queue is full");
         return;
     }
     q->arr[--(q->front)] = value;
 }
 
-int deleteFront(Queue *q){
-    if(q->front == q->rear){
+int deleteFront(Queue *q)
+{
+    if (q->front == q->rear)
+    {
         printf("Queue is Empty");
         return -1;
     }
@@ -47,16 +55,19 @@ int deleteFront(Queue *q){
     return value;
 }
 
-void display(Queue *q){
-    if(q->front == q->rear){
+void display(Queue *q)
+{
+    if (q->front == q->rear)
+    {
         printf("Queue is Empty");
         return;
     }
-    
+
     int temp = q->front;
     printf("Queue Elements: \n");
-    while(temp!=q->rear){
-        printf("%d \n",q->arr[temp]);
+    while (temp != q->rear)
+    {
+        printf("%d \n", q->arr[temp]);
         temp++;
     }
 }
@@ -64,7 +75,7 @@ void display(Queue *q){
 int main()
 {
     Queue q;
-    initQueue(&q,5);
+    initQueue(&q, 5);
 
     int choice, item;
     while (1)
@@ -91,8 +102,8 @@ int main()
             insertFront(&q, item);
             break;
         case 3:
-            printf("Deleted Element: %d",deleteFront(&q));
-            break;    
+            printf("Deleted Element: %d", deleteFront(&q));
+            break;
         case 4:
             printf("Displaying all Elements \n");
             display(&q);
