@@ -11,19 +11,26 @@ class B extends A {
 }
 
 class C extends B {
+    C(){
+        System.out.println("Mishra");
+    }
     void m1() {
         System.out.println("This is class C's method 1");
+    }
+    void m2(){
+        System.out.println("Animesh");
     }
 }
 
 public class dynamicMethodDispatch {
     public static void main(String args[]) {
-        A objA = new A();
-        B objB = new B();
+        A objA = new C();
+        // B objB = new B();
         C objC = new C();
 
-        objA.m1();
-        objB.m1();
+        // objA.m2();
+
+        // objB.m1();
         objC.m1();
     }
 }
