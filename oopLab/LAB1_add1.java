@@ -1,5 +1,7 @@
-// Print all the prime numbers in a given 1D array.
-public class LAB2_3 {
+// a. Write a method isPrime to accept one integer parameter and to check whether that
+// parameter is prime or not.
+// b. Using this method, generate first N prime numbers in the main method.
+public class LAB1_add1 {
 
     static int isPrime(int num) {
         if (num < 1) {
