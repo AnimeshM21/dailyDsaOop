@@ -1,24 +1,6 @@
-interface STUDENT {
-    int getNum();
-
-    void putNum(int roll);
-
-    int getMarks();
-
-    void putMarks(int mark);
-}
-
-interface Sports {
-    String getGrade();
-
-    void putGrade(String grade);
-}
-
-class Result implements STUDENT, Sports {
+class STUDENT {
     int rollNo;
     int marks;
-    String myGrade;
-
     public void putNum(int roll) {
         this.rollNo = roll;
     }
@@ -34,7 +16,17 @@ class Result implements STUDENT, Sports {
     public int getMarks() {
         return marks;
     }
+}
 
+interface Sports {
+    String getGrade();
+
+    void putGrade(String grade);
+}
+
+class Result extends STUDENT implements Sports {
+    
+    String myGrade;
     public void putGrade(String grade) {
         this.myGrade = grade;
     }
