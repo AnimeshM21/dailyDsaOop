@@ -91,7 +91,7 @@ bool isPalindrome(char *str)
         enqueueRear(&q, str[i]);
     }
 
-    while (q.front < q.rear)
+    while (q->front < q->rear)
     {
         char frontChar = dequeueFront(&q);
         char rearChar = dequeueRear(&q);

@@ -30,8 +30,9 @@ int main()
     enqueue(&q, 5);
     printf("Original queue: \n");
     displayQueue(&q);
-}
+
 reverseQueue(&q);
 printf("\nReversed queue: \n");
 displayQueue(&q);
 return 0;
+}
