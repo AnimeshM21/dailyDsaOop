@@ -1,3 +1,4 @@
+// Implement a queue using singly linked list without header node.
 #include <stdio.h>
 #include <stdlib.h>
 

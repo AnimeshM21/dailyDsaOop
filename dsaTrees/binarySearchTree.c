@@ -23,7 +23,7 @@ void inOrder(struct NODE *mynode)
 {
     if (mynode != NULL)
     {
-   
+
         inOrder(mynode->left);
         printf("Tree Elements: %d \n", mynode->data);
         inOrder(mynode->right);
@@ -35,22 +35,22 @@ int isBST(struct NODE *mynode)
     static struct NODE *prev = NULL;
     if (mynode != NULL)
     {
-        if (!isBST(mynode -> left))
+        if (!isBST(mynode->left))
         {
             return 0;
         }
-        if(prev!= NULL && mynode->data<= prev->data){
+        if (prev != NULL && mynode->data <= prev->data)
+        {
             return 0;
         }
         prev = mynode;
         return isBST(mynode->right);
     }
-    else{
+    else
+    {
         return 1;
     }
 }
-
-
 
 int main()
 {
@@ -71,11 +71,14 @@ int main()
 
     inOrder(root);
     printf("\n");
-    
+
     // printf("%d",isBST(root));
-    if(isBST(root)){
+    if (isBST(root))
+    {
         printf("This Tree is a BST");
-    }else{
+    }
+    else
+    {
         printf("This Tree is not a BST");
     }
     return 0;

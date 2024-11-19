@@ -77,7 +77,7 @@ int evalPrefix(char *exp)
 int main()
 {
     char exp[] = "-+7*45+20";
-    printf("Prefix expression: %s", exp);
+    printf("Prefix expression: %s \n", exp);
     printf("Result: %d", evalPrefix(exp));
     return 0;
 }
