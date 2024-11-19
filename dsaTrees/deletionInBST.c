@@ -50,8 +50,8 @@ void inOrder(struct NODE *mynode)
         inOrder(mynode->right);
     }
 }
-
-struct NODE *inOrderPre(struct NODE *mynode)
+// inOrderPre finds the rightmost node in the left subtree (in-order predecessor), which is used for deletion.
+struct NODE *inOrderPredecessor(struct NODE *mynode)
 {
     mynode = mynode->left;
     while (mynode->right != NULL)
@@ -93,7 +93,7 @@ struct NODE *deleteInBST(struct NODE *mynode, int value)
             return temp;
         }
 
-        iPre = inOrderPre(mynode);
+        iPre = inOrderPredecessor(mynode);
         mynode->data = iPre->data;
         mynode->left = deleteInBST(mynode->left, iPre->data);
     }

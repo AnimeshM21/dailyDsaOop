@@ -32,7 +32,7 @@ void inOrder(struct NODE *mynode)
 
 int isBST(struct NODE *mynode)
 {
-    static struct NODE *prev = NULL;
+      
     if (mynode != NULL)
     {
         if (!isBST(mynode->left))
