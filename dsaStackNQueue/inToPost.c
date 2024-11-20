@@ -98,8 +98,8 @@ int isOperator(char ch)
 
 char *inToPost(char *infix)
 {
-   STACK *sp = (STACK *)malloc(sizeof(STACK));
-   sp->top = -1;
+   STACK *stack = (STACK *)malloc(sizeof(STACK));
+   stack->top = -1;
 
    char *postfix = (char *)malloc((strlen(infix) + 1) * sizeof(char));
    int i = 0, j = 0;
@@ -114,22 +114,22 @@ char *inToPost(char *infix)
       }
       else
       {
-         if (precedence(infix[i]) > precedence(stackTop(sp)))
+         if (precedence(infix[i]) > precedence(stackTop(stack)))
          {
-            push(sp, infix[i]);
+            push(stack, infix[i]);
             i++;
          }
          else
          {
-            postfix[j] = pop(sp);
+            postfix[j] = pop(stack);
             j++;
          }
       }
    }
 
-   while (!isEmpty(sp))
+   while (!isEmpty(stack))
    {
-      postfix[j] = pop(sp);
+      postfix[j] = pop(stack);
       j++;
    }
 

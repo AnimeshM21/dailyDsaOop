@@ -10,12 +10,10 @@ struct NODE
 
 struct NODE *createNode(int data)
 {
-
     struct NODE *newNode = (struct NODE *)malloc(sizeof(struct NODE));
     newNode->data = data;
     newNode->left = NULL;
     newNode->right = NULL;
-
     return newNode;
 }
 

@@ -29,27 +29,43 @@ void inOrder(struct NODE *mynode)
         inOrder(mynode->right);
     }
 }
+struct NODE *prev = NULL;
 
-int isBST(struct NODE *mynode)
-{
-      
-    if (mynode != NULL)
-    {
-        if (!isBST(mynode->left))
-        {
+int isBST(struct NODE *mynode) {
+    if (mynode != NULL) {
+        // Traverse left subtree
+        if (!isBST(mynode->left)) {
             return 0;
         }
-        if (prev != NULL && mynode->data <= prev->data)
-        {
+
+        // Check if current node's data is greater than the previous node's data
+        if (prev != NULL && mynode->data <= prev->data) {
             return 0;
         }
+        
+        // Update prev to current node
         prev = mynode;
+
+        // Traverse right subtree
         return isBST(mynode->right);
     }
-    else
-    {
-        return 1;
+    return 1;
+}
+
+struct NODE* inOrderSuccessor(struct NODE* root, struct NODE* target) {
+    struct NODE* successor = NULL;
+
+    while (root != NULL) {
+        if (target->data < root->data) {
+            // Potential successor found, move to left subtree
+            successor = root;
+            root = root->left;
+        } else {
+            // Move to the right subtree
+            root = root->right;
+        }
     }
+    return successor; // This may return NULL if no successor exists
 }
 
 int main()
@@ -81,5 +97,14 @@ int main()
     {
         printf("This Tree is not a BST");
     }
+    struct NODE *target = lchild1; // Node with data 2
+    struct NODE *successor = inOrderSuccessor(root, target);
+
+    if (successor != NULL) {
+        printf("The inOrder successor of %d is: %d\n", target->data, successor->data);
+    } else {
+        printf("The node %d has no inOrder successor\n", target->data);
+    }
+
     return 0;
 }
