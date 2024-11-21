@@ -25,8 +25,8 @@ public class stringMethods {
         // String upperName = lowerName.toUpperCase();
         // System.out.println(upperName);
 
-        // // The .trim() methods remove any extra spaces from the string
-        // String ex = " Animesh ";
+        // The .trim() methods remove any extra spaces from the string
+        // String ex = "             Animesh       Mishra  ";
         // String trimmed = ex.trim();
         // System.out.println(trimmed);
 
@@ -60,10 +60,10 @@ public class stringMethods {
         // entered
         // System.out.println(name.indexOf("m"));
 
-        // // the indexOf() methods returns the index of the character entered beyond
+        // the indexOf() methods returns the index of the character entered beyond
         // the index entered
         // String myname = "Animesh Mishra";
-        // System.out.println(name.indexOf("i",6));
+        // System.out.println(myname.indexOf("i",6));
 
         // the lastIndexOf() methods returns the last occurence index of the character
         // entered
@@ -82,11 +82,11 @@ public class stringMethods {
 
         // the equalsIgnoreCase() methods returns TRUE AND FALSE if the string is equal
         // to the string entered ignoring uppercase and lowercase letters
-        // String myname = "Animesh Mishra";
-        // System.out.println(name.equalsIgnoreCase("Animesh"));
+        String myname = "Animesh";
+        System.out.println(myname.equalsIgnoreCase("animesh"));
 
         // back slash is used to escape the character here for the double quote
-        System.out.println("Hello I am Animesh \" double quote");
+        // System.out.println("Hello I am Animesh \" double quote");
     }
 
 }
