@@ -1,7 +1,6 @@
-Write a method findSum to find the sum of digits of a number.
+// Write a method findSum to find the sum of digits of a number.
 public class LAB1_add2 {
     
-    // Method to find the sum of digits of a number
     public static int findSum(int number) {
         int sum = 0;
         while (number != 0) {
@@ -12,7 +11,7 @@ public class LAB1_add2 {
     }
 
     public static void main(String[] args) {
-        int number = 1234;  // Example number
+        int number = 1244;
         int result = findSum(number);
         System.out.println("The sum of digits is: " + result);
     }

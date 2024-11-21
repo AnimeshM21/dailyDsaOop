@@ -19,9 +19,9 @@ public class LAB1_2 {
         int number = 1221;
         myClass myNum = new myClass();
         if (myNum.reverse(number) == number) {
-            System.out.println("This is a plaindrome");
+            System.out.println("This is a palindrome");
         } else {
-            System.out.println("This is not a plaindrome");
+            System.out.println("This is not a palindrome");
         }
 
     }
