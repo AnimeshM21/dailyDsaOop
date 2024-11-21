@@ -17,7 +17,7 @@ public class LAB2_4 {
 
         for (int i = 0; i < 3; i++) {
             for (int j = 0; j < 3; j++) {
-                result[i][j] = mat1[i][j] + mat2[i][j];
+                result[i][j] = mat1[i][j] + mat2[i][j]; 
             }
         }
 
