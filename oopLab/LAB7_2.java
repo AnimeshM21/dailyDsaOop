@@ -18,3 +18,4 @@ public class LAB7_2 {
         System.out.println("Max of 2D array: " + maxObj.max(array2D));
     }
 }
+// Completed

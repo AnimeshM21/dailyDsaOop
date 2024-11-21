@@ -33,3 +33,4 @@ public class LAB7_1 {
         System.out.println("Number of Bathrooms: " + myHouse.getBath());
     }
 }
+// Completed
