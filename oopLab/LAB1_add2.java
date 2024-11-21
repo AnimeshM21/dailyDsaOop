@@ -1,4 +1,5 @@
 // Write a method findSum to find the sum of digits of a number.
+// Completed
 public class LAB1_add2 {
     
     public static int findSum(int number) {

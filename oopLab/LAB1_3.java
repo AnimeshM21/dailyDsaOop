@@ -1,6 +1,7 @@
 // a. Write a method fact to accept one integer parameter and to find the factorial of a
 // given number.
 // b. Using fact method, compute NCR in the main method.
+// Completed
 class myFact {
     int fact(int n) {
         int factorial = 1;
