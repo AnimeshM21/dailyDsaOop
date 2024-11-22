@@ -5,7 +5,7 @@ public class stringMethods {
 
         // STRINGS ARE IMMUTABLE SO ANY CHANGES TO A EXISTING STRING RETURN A NEW STRING
 
-        // String name = "Animesh";
+        String name = "Animesh";
 
         // // String name = new String("Animesh Mishra");
         // String name = "Animesh Mishra";
