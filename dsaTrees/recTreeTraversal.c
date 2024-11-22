@@ -10,12 +10,10 @@ struct NODE
 
 struct NODE *createNode(int data)
 {
-
     struct NODE *newNode = (struct NODE *)malloc(sizeof(struct NODE));
     newNode->data = data;
     newNode->left = NULL;
     newNode->right = NULL;
-
     return newNode;
 }
 
@@ -24,10 +22,9 @@ void inOrder(struct NODE *mynode)
     if (mynode != NULL)
     {
         inOrder(mynode->left);
-        printf("Tree Elements: %d \n",mynode->data);
+        printf("Tree Elements: %d \n", mynode->data);
         inOrder(mynode->right);
     }
-
 }
 
 void postOrder(struct NODE *mynode)
@@ -36,9 +33,8 @@ void postOrder(struct NODE *mynode)
     {
         postOrder(mynode->left);
         postOrder(mynode->right);
-        printf("Tree Elements: %d \n",mynode->data);
+        printf("Tree Elements: %d \n", mynode->data);
     }
-
 }
 
 void preOrder(struct NODE *mynode)
@@ -49,7 +45,6 @@ void preOrder(struct NODE *mynode)
         preOrder(mynode->left);
         preOrder(mynode->right);
     }
-
 }
 
 int main()
