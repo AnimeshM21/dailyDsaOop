@@ -1,5 +1,6 @@
 // Write a program that creates an array of integers and then uses a for loop to reverse
 // the order of the elements in the array.
+// Completed
 public class LAB2_1 {
     public static void main(String args[]){
         int[] arr = {1,2,3,4,5,6,7};

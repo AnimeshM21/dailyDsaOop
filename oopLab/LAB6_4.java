@@ -95,3 +95,4 @@ public class LAB6_4 {
         System.out.println("Number of Bathrooms: " + myHouse.getBath());
     }
 }
+// Completed

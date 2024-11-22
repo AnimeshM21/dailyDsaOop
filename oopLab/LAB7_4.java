@@ -50,3 +50,4 @@ public class LAB7_4 {
         System.out.println("The student's grade in Sports is: " + myStudent.getGrade());
     }
 }
+// Completed
