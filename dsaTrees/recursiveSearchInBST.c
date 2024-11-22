@@ -40,7 +40,7 @@ int isBST(struct NODE *mynode)
         return 1;
     }
 }
-struct NODE *recsearchInBST(struct NODE *mynode, int key)
+struct NODE *recSearchInBST(struct NODE *mynode, int key)
 {
     if (mynode == NULL)
     {
@@ -52,11 +52,11 @@ struct NODE *recsearchInBST(struct NODE *mynode, int key)
     }
     else if (mynode->data < key)
     {
-        return recsearchInBST(mynode->right, key);
+        return recSearchInBST(mynode->right, key);
     }
     else
     {
-        return recsearchInBST(mynode->left, key);
+        return recSearchInBST(mynode->left, key);
     }
 }
 
@@ -84,7 +84,7 @@ int main()
     else
     {
         printf("\n");
-        struct NODE *n = recsearchInBST(root, 9);
+        struct NODE *n = recSearchInBST(root, 9);
         if (n != NULL)
         {
             printf("ELEMENT FOUND: %d", n->data);
@@ -96,3 +96,4 @@ int main()
     }
     return 0;
 }
+ 

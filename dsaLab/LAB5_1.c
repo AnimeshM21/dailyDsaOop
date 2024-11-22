@@ -82,7 +82,7 @@ void peek(STACK *stack)
 int main()
 {
     STACK *stack = (STACK *)malloc(sizeof(STACK));
-    stack->items = (int *)malloc(MAX * sizeof(int)); // Allocate space for the stack items
+    stack->items = (int *)malloc(MAX * sizeof(int)); 
     stack->top = -1;
 
     int choice, input;
@@ -93,6 +93,7 @@ int main()
         printf("3. DISPLAY\n");
         printf("4. PEEK\n");
         printf("5. EXIT\n");
+        
         printf("Enter your choice: ");
         scanf("%d", &choice);
 

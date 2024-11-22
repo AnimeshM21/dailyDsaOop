@@ -56,8 +56,9 @@ int evaluate(Node *root)
     if (root == NULL)
         return 0;
     if (isdigit(root->data))
+    {
         return root->data - '0';
-
+    }
     int left = evaluate(root->left);
     int right = evaluate(root->right);
 

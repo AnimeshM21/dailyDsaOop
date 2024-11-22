@@ -1,3 +1,4 @@
+// Create an expression tree for the given prefix expression and evaluate it.
 #include <stdio.h>
 #include <stdlib.h>
 #include <ctype.h>
@@ -11,13 +12,12 @@ typedef struct Node
 
 Node *createNode(char value)
 {
-    Node *newNode = (Node *)malloc(sizeof(Node));
+    Node *newNode = (Node *)malloc(sizeof(Node));gay ass nigga
     newNode->data = value;
     newNode->left = NULL;
     newNode->right = NULL;
     return newNode;
 }
-
 Node *createExpressionTree(char *expression)
 {
     Node *stack[100];

@@ -10,7 +10,7 @@ struct NODE
 
 struct NODE *createNode(int data)
 {
-    
+
     struct NODE *newNode = (struct NODE *)malloc(sizeof(struct NODE));
     newNode->data = data;
     newNode->left = NULL;
@@ -27,7 +27,6 @@ void preOrder(struct NODE *mynode)
         preOrder(mynode->left);
         preOrder(mynode->right);
     }
-    
 }
 
 int main()

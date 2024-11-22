@@ -1,11 +1,11 @@
 #include <stdio.h>
 #include <stdlib.h>
-
+#define MAX 50
 typedef struct
 {
     int front;
     int rear;
-    int *arr;
+    int arr[MAX];
     int size;
 } circQueue;
 

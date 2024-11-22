@@ -21,7 +21,7 @@ initStack(twoStack *stack)
 
 void push1(twoStack *stack, int value)
 {
-    if (stack->top < stack->top2 - 1)
+    if (stack->top1 < stack->top2 - 1)
     {
         stack->arr[++stack->top1] = value;
     }
@@ -33,7 +33,7 @@ void push1(twoStack *stack, int value)
 
 void push2(twoStack *stack, int value)
 {
-    if (stack->top < stack->top2 - 1)
+    if (stack->top1 < stack->top2 - 1)
     {
         stack->arr[--stack->top2] = value;
     }

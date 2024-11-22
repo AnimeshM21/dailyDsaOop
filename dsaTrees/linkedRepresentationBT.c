@@ -21,9 +21,9 @@ struct NODE *createNode(int data)
 
 int main()
 {
-    struct NODE* root = createNode(1);
-    struct NODE* lchild = createNode(2);
-    struct NODE* rchild = createNode(4);
+    struct NODE *root = createNode(1);
+    struct NODE *lchild = createNode(2);
+    struct NODE *rchild = createNode(4);
 
     root->left = lchild;
     root->right = rchild;

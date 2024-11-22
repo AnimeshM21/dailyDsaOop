@@ -72,6 +72,7 @@ void insertInBST(struct NODE *mynode, int value)
         prev->left = new;
     }
 }
+
 void inOrder(struct NODE *mynode)
 {
     if (mynode != NULL)
